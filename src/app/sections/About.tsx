@@ -5,9 +5,9 @@ import { Container } from "@/components/Container";
 export default function About() {
   return (
     <Container>
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="max-w-3xl text-center space-y-6">
-          <h1>Hello.</h1>
+      <div>
+        <div>
+          <h2>Hello.</h2>
           <p className="text-2xl">
             I'm a Kenyan creative designer and full-stack developer crafting
             elegant, high-performing web experiences since 2015. With a passion

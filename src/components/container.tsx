@@ -7,7 +7,7 @@ interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
 export function Container({ children, className, ...props }: ContainerProps) {
   return (
     <div
-      className={cn("w-full max-w-7xl mx-auto ", className)}
+      className={cn("w-full max-w-[90%] mx-auto ", className)}
       {...props}
     >
       {children}

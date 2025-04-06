@@ -16,14 +16,13 @@ export default function Hero({
         <div className="lg:w-[55%] w-[80%]">
           <div className="space-y-2 lg:space-y-4">
             <p>Jonah Wambua</p>
-            <h1 className="text-6xl font-bold leading-tight font-heading">
-              Full-Stack Software Developer. <br />
-              <span className="text-4xl">Graphic & UI/UX Designer.</span>
-            </h1>
-            <h1 className="text-2xl font-heading">
+            <h1>Full-Stack Software Developer. </h1>
+            <h2>Graphic & UI/UX Designer.</h2>
+
+            <h4>
               I craft digital designs & web applications, prioritizing user
               experience, functionality, responsiveness, and accessibility.
-            </h1>
+            </h4>
             <Button
               onClick={onWelcomeClick}
               variant="outline"

@@ -3,10 +3,10 @@ import WorkItem from "@/components/WorkItem";
 
 export default function Work() {
   return (
-    <section className="container mx-auto px-4">
+    <section>
       <Container>
         <div>
-          <h1 className="text-5xl font-bold font-heading">Work</h1>
+          <h2>Work</h2>
           <p className="text-2xl">
             I primarily engage in contractual work, although I occasionally
             freelance or undertake projects for enjoyment. Below are a few of my

@@ -50,14 +50,10 @@ export default function WorkItem({
 
       {/* Content */}
       <div className="w-full md:w-1/2 flex flex-col justify-center">
-        <h3 className="text-2xl font-semibold text-gray-800 dark:text-white capitalize mb-4">
-          {title}
-        </h3>
-        <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-          {description}
-        </p>
+        <h3>{title}</h3>
+        <p>{description}</p>
 
-        <ul className="flex flex-wrap items-center gap-2 text-sm uppercase tracking-widest text-gray-700 dark:text-gray-300">
+        <ul className="flex flex-wrap items-center gap-2 uppercase tracking-widest text-gray-700 mt-4">
           {tags.map((tag, index) => (
             <li key={tag} className="flex items-center gap-2 text-xs">
               {index !== 0 && <span className="text-xs">&#x2022;</span>}
