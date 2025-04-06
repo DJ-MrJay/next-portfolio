@@ -5,9 +5,11 @@ import { Playfair_Display } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-primary",
 });
 const playfair = Playfair_Display({
   subsets: ["latin"],
+  variable: "--font-heading",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.className} ${playfair.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body>{children}</body>
     </html>
   );

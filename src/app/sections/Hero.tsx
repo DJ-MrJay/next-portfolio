@@ -1,10 +1,9 @@
-// app/sections/Hero.tsx
 "use client";
 
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Container } from "@/components/container";
+import { Container } from "@/components/Container";
 
 export default function Hero({
   onWelcomeClick,

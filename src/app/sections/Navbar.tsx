@@ -5,7 +5,7 @@ import { Menu, Sun, Moon, Equal } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
-import { Container } from "@/components/container";
+import { Container } from "@/components/Container";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Hero from "./sections/Hero";
 import Navbar from "./sections/Navbar";
 import About from "./sections/About";
+import Work from "./sections/Work"
 // Import other sections later
 
 export default function Home() {
@@ -24,6 +25,10 @@ export default function Home() {
           <main className="mt-20 scroll-smooth">
             <section id="about">
               <About />
+            </section>
+
+            <section id="work">
+              <Work />
             </section>
             {/* Add Work, Articles, Contact, Footer */}
           </main>

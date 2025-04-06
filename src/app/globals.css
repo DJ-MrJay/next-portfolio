@@ -1,7 +1,103 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+/* Base styles */
+body {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+/* Override tailwind default fonts */
+:root {
+  --font-heading: "Playfair Display", serif;
+  --font-primary: "Inter", sans-serif;
+}
+
+/* Headings - Desktop First */
+h1 {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+h4 {
+  font-family: var(--font-heading);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+h5 {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+h6 {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* Typography for smaller screens (Tablet/Mobile) */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
+
+  h4 {
+    font-size: 22px;
+  }
+
+  h5 {
+    font-size: 18px;
+  }
+
+  h6 {
+    font-size: 15px;
+  }
+}
+
+/* Button typography */
+button {
+  font-family: var(--font-primary);
+  font-size: 15px;
+  font-weight: 500; /* Medium weight */
+  line-height: 1.5;
+}
+
+/* @custom-variant dark (&:is(.dark *));
 
 @theme {
   --color-background: var(--background);
@@ -122,4 +218,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
+} */
