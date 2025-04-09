@@ -1,15 +1,22 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Playfair_Display } from "next/font/google";
+import { Playfair_Display, Inter, Abril_Fatface } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-primary",
 });
+
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-heading",
+});
+
+const abril = Abril_Fatface({
+  subsets: ["latin"],
+  variable: "--font-heading-alt",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -24,8 +31,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body>{children}</body>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${playfair.variable} ${abril.variable}`}
+    >
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+        />
+      </head>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
