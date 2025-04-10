@@ -7,6 +7,7 @@ import { useTheme } from "next-themes";
 import { Container } from "@/components/Container";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import SocialLinks from "./SocialLinks";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,7 +58,7 @@ export default function Navbar() {
         backgroundColor: "var(--background-color)",
         height: "var(--navbar-height)",
         color: "var(--text-color)",
-        borderBottom: `1px solid var(--shade-100)`,
+        borderBottom: `2px solid var(--shade-100)`,
       }}
     >
       <Container className="h-[var(--navbar-height)]">
@@ -92,18 +93,30 @@ export default function Navbar() {
               {/* Theme Toggle */}
               <button onClick={toggleTheme} aria-label="Toggle Theme">
                 {theme === "dark" ? (
-                  <Sun size={24} strokeWidth={1} />
+                  <Sun
+                    size={window.innerWidth < 768 ? 28 : 24}
+                    strokeWidth={1.5}
+                  />
                 ) : (
-                  <Moon size={24} strokeWidth={1} />
+                  <Moon
+                    size={window.innerWidth < 768 ? 28 : 24}
+                    strokeWidth={1.5}
+                  />
                 )}
               </button>
 
               {/* Mobile Menu Toggle */}
               <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
                 {isOpen ? (
-                  <X size={24} strokeWidth={1.5} />
+                  <X
+                    size={window.innerWidth < 768 ? 30 : 24}
+                    strokeWidth={1.5}
+                  />
                 ) : (
-                  <Equal size={24} strokeWidth={1.5} />
+                  <Equal
+                    size={window.innerWidth < 768 ? 30 : 24}
+                    strokeWidth={1.5}
+                  />
                 )}
               </button>
             </div>
@@ -120,20 +133,27 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden px-6 pt-4 pb-6 flex flex-col gap-4 bg-background"
+            className="md:hidden pt-16 pb-16 flex flex-col gap-4 items-center"
+            style={{
+              backgroundColor: "var(--background-color-transparent)",
+              color: "var(--text-color)",
+            }}
           >
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`text-sm uppercase ${
+                className={`text-xl tracking-wide uppercase ${
                   active === link.href ? "text-primary font-medium" : ""
                 }`}
               >
                 {link.label}
               </a>
-            ))}
+            ))}{" "}
+            <div className="mt-10">
+              <SocialLinks />
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

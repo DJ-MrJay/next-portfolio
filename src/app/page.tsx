@@ -71,7 +71,7 @@ export default function Home() {
                 <Contact />
               </section>
             </main>
-            {/* <Footer /> */}
+            <Footer />
           </motion.div>
         )}
       </AnimatePresence>

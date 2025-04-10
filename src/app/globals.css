@@ -1,17 +1,15 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* ----------------------------------------------------------
-   Root Variables (Base & Themes)
----------------------------------------------------------- */
+/* Root variables (light theme) */
 :root {
-  --navbar-height: 70px; /* mobile default */
-
+  --navbar-height: 70px;
   --font-heading: "Playfair Display", serif;
   --font-heading-alt: "Abril Fatface", serif;
   --font-primary: "Inter", sans-serif;
 
   --background-color: #fafafa;
+  --background-color-transparent: #fafafafa;
   --text-color: #121212;
 
   --shade-100: #efefef;
@@ -23,15 +21,18 @@
   --grey-text: #595959;
 }
 
+/* Navbar height for desktop */
 @media (min-width: 768px) {
   :root {
-    --navbar-height: 90px; /* desktop */
+    --navbar-height: 90px;
   }
 }
 
+/* Root variables (dark theme) */
 :root.dark {
   --background-color: #121212;
-  --text-color: #f7fafc;
+  --background-color-transparent: #121212fa;
+  --text-color: #efefef;
 
   --shade-100: #222222;
   --shade-300: #4383cb;
@@ -42,12 +43,17 @@
   --grey-text: #cfd8e2;
 }
 
-/* ----------------------------------------------------------
-   Global Base Styles
----------------------------------------------------------- */
+/* Global base styles */
 html {
   scroll-behavior: smooth;
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 
 body {
   font-family: var(--font-primary);
@@ -64,10 +70,14 @@ header {
   color: var(--text-color);
 }
 
-/* ----------------------------------------------------------
-   Typography (Desktop First)
----------------------------------------------------------- */
-h1,
+/* Typography desktop first */
+h1 {
+  font-family: var(--font-heading);
+  color: var(--shade-500);
+  line-height: 1;
+}
+
+
 h2,
 h3,
 h4,
@@ -75,14 +85,13 @@ h5,
 h6 {
   font-family: var(--font-heading);
   color: var(--shade-500);
-  line-height: 1.5;
+  line-height: 1.3;
 }
 
 h1 {
   font-size: 60px;
   font-weight: 700;
   line-height: 1.3;
-  letter-spacing: -0.5px;
 }
 
 h2 {
@@ -110,7 +119,7 @@ h6 {
   font-weight: 500;
 }
 
-/* Typography for smaller screens (Tablet/Mobile) */
+/* Typography for small screens */
 @media (max-width: 768px) {
   body {
     font-size: 16px;
@@ -141,17 +150,25 @@ h6 {
   }
 }
 
-/* ----------------------------------------------------------
-   Buttons
----------------------------------------------------------- */
+/* Buttons */
+.btn,
 .btn-rounded {
   border: 2px solid var(--grey-color);
   background-color: transparent;
-  padding: 1rem 2rem;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 0.2rem;
   transition: border 500ms, background-color 500ms, color 500ms;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  border-radius: 0.5rem;
+}
+
+.btn-rounded {
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
   border-radius: 2rem;
 }
 
@@ -164,13 +181,19 @@ h6 {
   border-color: var(--shade-500);
 }
 
-.btn {
-  border: 2px solid var(--grey-color);
-  background-color: transparent;
-  padding: 0.5rem 1rem;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 0.2rem;
-  transition: border 500ms, background-color 500ms, color 500ms;
-  border-radius: 0.5rem;
+/* Aurora background animation */
+@theme inline {
+  --animate-aurora: aurora 60s linear infinite;
+  @keyframes aurora {
+    from {
+      background-position:
+        50% 50%,
+        50% 50%;
+    }
+    to {
+      background-position:
+        350% 50%,
+        350% 50%;
+    }
+  }
 }

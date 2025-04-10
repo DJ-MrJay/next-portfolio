@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Playfair_Display, Inter, Abril_Fatface } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { AuroraBackground } from "./components/ui/aurora-background";
 
 const inter = Inter({
   subsets: ["latin"],

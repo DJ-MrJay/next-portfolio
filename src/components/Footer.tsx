@@ -9,7 +9,8 @@ const Footer = () => {
   return (
     <footer className="py-10">
       <Container>
-        <div className="flex justify-between items-center flex-wrap gap-4">
+      <div className="flex flex-wrap gap-4 justify-center md:justify-between items-center text-center">
+
           {/* Left Text */}
           <div className="text-sm">
             <p>

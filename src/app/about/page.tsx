@@ -8,24 +8,39 @@ import {
 } from "@/components/ui/accordion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Image from "next/image";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Container } from "@/components/Container";
 import { ContainerNarrow } from "@/components/ContainerNarrow";
+import { cn } from "@/lib/utils";
 
 export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main style={{ paddingTop: "var(--navbar-height)" }}>
-        <section className="py-[10%] md:py-[5%] mx-auto">
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, ease: "easeInOut" }}
+        style={{ paddingTop: "var(--navbar-height)" }}
+      >
+        <section className="relative overflow-hidden py-[10%] md:py-[5%] mx-auto">
+          {/* Dot Background Layer */}
+          <div
+            className={cn(
+              "absolute inset-0 -z-10",
+              "[background-size:20px_20px]",
+              "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
+              "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
+            )}
+          />
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black -z-10" />
+
           <ContainerNarrow>
             <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-12 items-center">
-              {/* Column 1 with the image */}
+              {/* Column 1 with the text */}
               <div className="space-y-4">
                 <p className="text-2xl font-medium">My Coding Journey</p>
                 <p className="text-xl">
@@ -69,7 +84,6 @@ export default function AboutPage() {
                     rel="noopener noreferrer"
                     style={{ color: "var(--shade-500)" }}
                   >
-                    {" "}
                     CodePen
                   </Link>
                   . Beyond coding, I have a deep appreciation for graphic
@@ -82,6 +96,7 @@ export default function AboutPage() {
                 </p>
                 <p>Thank you.</p>
               </div>
+
               {/* Column 2 with the image */}
               <div className="hidden sm:block relative w-full h-full">
                 <div
@@ -331,7 +346,7 @@ export default function AboutPage() {
 
                 <div className="flex items-center justify-between w-full">
                   <Link
-                    href="#intro"
+                    href="/hero"
                     className="flex items-center gap-2 scroll-smooth"
                   >
                     <motion.div
@@ -344,11 +359,11 @@ export default function AboutPage() {
                     >
                       <ArrowLeft />
                     </motion.div>
-                    Intro
+                    Home
                   </Link>
 
                   <Link
-                    href="#work"
+                    href="/"
                     className="flex items-center gap-2 scroll-smooth"
                   >
                     Work
@@ -368,7 +383,7 @@ export default function AboutPage() {
             </Container>
           </div>
         </section>
-      </main>
+      </motion.main>
       <Footer />
     </>
   );

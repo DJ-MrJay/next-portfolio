@@ -35,7 +35,6 @@ const articles = [
 export default function ArticlesSection() {
   return (
     <section id="articles" className="py-[10%] md:py-[5%]">
-      {" "}
       <Container>
         <div className="space-y-4">
           <div className="scroll-in space-y-4">
@@ -56,7 +55,7 @@ export default function ArticlesSection() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05, duration: 0.9 }}
-                className="block article group shadow transition-shadow duration-500 hover:shadow-md focus-within:shadow-md"
+                className="flex flex-col h-full article group shadow transition-shadow duration-500 hover:shadow-md focus-within:shadow-md"
               >
                 <div className="overflow-hidden">
                   <Image
@@ -67,27 +66,27 @@ export default function ArticlesSection() {
                     className="w-full h-full object-cover opacity-80 grayscale contrast-75 transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-hover:contrast-100"
                   />
                 </div>
-                <div className="bg-white dark:bg-gray-900 p-4 h-full">
-                  <div className="text-sm uppercase text-gray-500 mb-2">
+                <div className="p-4 flex flex-col flex-grow">
+                  <div className="text-sm uppercase text-gray-500">
                     MEDIUM <i className="bi bi-medium"></i>
                   </div>
-                  <h5>{article.title}</h5>
+                  <h5 className="text-[var(--shade-500)]">{article.title}</h5>
                   <p>{article.description}</p>
                 </div>
               </motion.a>
             ))}
           </div>
         </div>
-        {/* <div className="text-center mt-12 scroll-in">
+        <div className="text-center pt-16 pb-4 scroll-in">
           <Link
             href="https://medium.com/@djmrjay"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-rounded mt-2 inline-flex items-center"
+            className="btn-rounded items-center"
           >
             View All Articles
           </Link>
-        </div> */}
+        </div>
       </Container>
     </section>
   );
