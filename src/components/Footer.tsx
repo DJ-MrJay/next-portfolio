@@ -14,7 +14,7 @@ const Footer = () => {
           {/* Left Text */}
           <div className="text-sm">
             <p>
-              © {year}. Developed with <span style={{ color: "red" }}>♥</span>{" "}
+              ©2015 -  {year}. Developed with <span style={{ color: "red" }}>♥</span>{" "}
               by yours truly!
             </p>
           </div>

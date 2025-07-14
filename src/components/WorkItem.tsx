@@ -32,7 +32,7 @@ export default function WorkItem({
       ref={ref}
       className={`flex flex-col md:flex-row ${
         reverse ? "md:flex-row-reverse" : ""
-      } gap-12 py-[5%]`}
+      } gap-6 md:gap-12 py-[5%]`}
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : {}}
       transition={{ duration: 1 }}
@@ -50,8 +50,15 @@ export default function WorkItem({
 
       {/* Content */}
       <div className="w-full md:w-1/2 flex flex-col justify-center">
-        <h3>{title}</h3>
-        <p>{description}</p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.8 }}
+        >
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </motion.div>
 
         {/* Tags */}
         <ul

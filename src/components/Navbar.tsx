@@ -27,6 +27,27 @@ export default function Navbar() {
     { href: "#contact", label: "Contact" },
   ];
 
+  const menuVariants = {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
   // Detect scroll direction
   useEffect(() => {
     const handleScroll = () => {
@@ -61,7 +82,7 @@ export default function Navbar() {
         borderBottom: `2px solid var(--shade-100)`,
       }}
     >
-      <Container className="h-[var(--navbar-height)]">
+      <Container className="h-full">
         <div className="flex justify-between items-center h-full">
           <Link href="/hero">
             <img
@@ -80,7 +101,7 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className={`hover:underline text-sm uppercase tracking-wide transition-colors ${
+                  className={`text-sm uppercase tracking-wide transition-colors ${
                     active === link.href ? "text-primary font-medium" : ""
                   }`}
                 >
@@ -129,19 +150,21 @@ export default function Navbar() {
         {isOpen && (
           <motion.div
             key="mobile-menu"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            initial="initial"
+            animate="animate"
+            exit="initial"
+            variants={menuVariants}
             transition={{ duration: 0.2 }}
-            className="md:hidden pt-16 pb-16 flex flex-col gap-4 items-center"
+            className="md:hidden pt-16 pb-16 m-5 rounded-xl flex flex-col gap-4 items-center"
             style={{
               backgroundColor: "var(--background-color-transparent)",
               color: "var(--text-color)",
             }}
           >
             {links.map((link) => (
-              <a
+              <motion.a
                 key={link.href}
+                variants={itemVariants}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className={`text-xl tracking-wide uppercase ${
@@ -149,11 +172,12 @@ export default function Navbar() {
                 }`}
               >
                 {link.label}
-              </a>
-            ))}{" "}
-            <div className="mt-10">
+              </motion.a>
+            ))}
+
+            <motion.div variants={itemVariants} className="mt-10">
               <SocialLinks />
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
