@@ -1,24 +1,19 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Playfair_Display, Inter, Abril_Fatface } from "next/font/google";
+import { Inter } from "next/font/google";
+import localFont from 'next/font/local'
 import { ThemeProvider } from "next-themes";
-import { AuroraBackground } from "./components/ui/aurora-background";
+
+const walsheim = localFont({
+  src: 'fonts/gt-walsheim-bold.woff',
+  variable: '--font-heading',
+})
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-primary",
 });
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-heading",
-});
-
-const abril = Abril_Fatface({
-  subsets: ["latin"],
-  variable: "--font-heading-alt",
-  weight: "400",
-});
 
 export const metadata: Metadata = {
   title: "Personal Portfolio - Jonah Wambua",
@@ -35,7 +30,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${playfair.variable} ${abril.variable}`}
+      className={`${inter.variable} ${walsheim.variable}`}
     >
       <head>
         <link
