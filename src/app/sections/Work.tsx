@@ -1,5 +1,6 @@
 import { Container } from "@/components/Container";
 import WorkItem from "@/components/WorkItem";
+import { motion } from "framer-motion";
 
 const workItems = [
   {
@@ -30,7 +31,7 @@ const workItems = [
         perfectly embodies the brand’s dedication to quality and excellence.
       </>
     ),
-    image: "/assets/images/donga-screenshot.jpg",
+    image: "/assets/images/donga-shot.png",
     tags: ["WordPress", "PHP", "HTML5", "CSS3", "JavaScript"],
     codeUrl: "https://github.com/you/dashboardx",
     liveUrl: "https://donga.co.ke",
@@ -98,27 +99,25 @@ const workItems = [
     codeUrl: "https://github.com/DJ-MrJay/My-Blog-App",
   },
   {
-    title: "Neo Lite Energies",
+    title: "Phil Logistics",
     description: (
       <>
-        I had the opportunity to design and develop a professional website for a
-        forward-thinking energy firm specializing in petroleum products and
-        services. Leveraging my expertise in{" "}
+        I was tasked with creating a website for a logistics firm that focuses
+        on customs brokerage, transport, logistics, and warehousing services. My
+        extensive knowledge of{" "}
         <a
-          href="https://www.joomla.org"
+          href="https://www.wordpress.com"
           target="_blank"
           rel="noopener noreferrer"
           style={{ color: "var(--shade-500)" }}
         >
-          Joomla
+          WordPress
         </a>
-        , I efficiently built and launched the fully functional site in just
-        three days, delivering a sleek and responsive digital presence that
-        aligns with the company’s innovative vision.
+        , enabled me to skillfully develop and deploy the site within a mere three days.
       </>
     ),
-    image: "/assets/images/neolite.jpg",
-    tags: ["Joomla", "PHP", "HTML5", "CSS3", "JavaScript"],
+    image: "/assets/images/phil-shot.png",
+    tags: ["WordPress", "PHP", "HTML5", "CSS3", "JavaScript"],
     liveUrl: "https://neolite.co.ke/",
     reverse: true,
   },
@@ -184,17 +183,31 @@ export default function Work() {
       style={{ backgroundColor: "var(--shade-100)" }}
     >
       <Container>
-        <div>
-          <h2>Work</h2>
-          <p className="text-xl sm:text-2xl">
+        <div className="mb-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.8 }}
+          >
+            Work
+          </motion.h2>
+          <motion.p
+            className="text-xl sm:text-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
+            viewport={{ once: true, amount: 0.8 }}
+          >
             I specialize in contract-based work, with occasional freelance
             projects or personal endeavors driven by passion. Below are some of
             my recent works:
-          </p>
+          </motion.p>
         </div>
 
         {workItems.map((item, index) => (
           <div
+            className="md:pt-0 pt-6"
             key={index}
             style={{
               borderBottom:

@@ -38,10 +38,19 @@ export default function ArticlesSection() {
       <Container>
         <div className="space-y-4">
           <div className="scroll-in space-y-4">
-            <h2>Featured Articles</h2>
+            <h2>Feature Articles</h2>
             <p className="text-xl sm:text-2xl">
-              I've authored several tech articles on Medium, covering topics
-              that piqued my interest. I'd be delighted to share them here:
+              I've authored several tech articles on{" "}
+              <a
+                href="https://medium.com/@djmrjay"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "var(--shade-500)" }}
+              >
+                Medium
+              </a>
+              , covering topics that caught my interest. I'd be delighted to
+              share them here:
             </p>
           </div>
 

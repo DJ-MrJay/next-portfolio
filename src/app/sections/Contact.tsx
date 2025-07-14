@@ -1,6 +1,7 @@
 "use client";
 
 import { Container } from "@/components/Container";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 export default function ContactSection() {
@@ -53,13 +54,26 @@ export default function ContactSection() {
       <Container>
         <div className="space-y-8">
           <div className="mx-auto space-y-4 scroll-into-view">
-            <h2>Contacts</h2>
-            <p className="text-xl sm:text-2xl">
-              If you have an application you are interested in developing, a
-              brand that you need designed, or a project that needs coding, I’d
-              love to help with it. Leave a message below and I will promptly
-              get in touch.
-            </p>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.8 }}
+            >
+              Contacts
+            </motion.h2>
+            <motion.p
+              className="text-xl sm:text-2xl"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.8 }}
+            >
+              If you have a website or an application you are interested in
+              developing, a brand that you need designed, or a project that
+              needs coding, I’d love to help with it. Leave a message below and
+              I will promptly get in touch.
+            </motion.p>
           </div>
 
           <div className="form-container px-0 md:px-12 lg:px-24">
@@ -70,7 +84,7 @@ export default function ContactSection() {
               onSubmit={validateForm}
               className="flex flex-col gap-8 text-center"
             >
-                <div className="flex flex-col md:flex-row gap-4">
+              <div className="flex flex-col md:flex-row gap-4">
                 <input
                   type="text"
                   id="fname"
@@ -87,7 +101,7 @@ export default function ContactSection() {
                   placeholder="Your email address?"
                   className="flex-1 border-2 border-[var(--grey-color)] bg-transparent p-3 md:p-4 rounded-md focus:outline-none focus:border-[var(--shade-500)]"
                 />
-                </div>
+              </div>
 
               <textarea
                 id="msg"
