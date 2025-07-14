@@ -33,7 +33,6 @@ const workItems = [
     ),
     image: "/assets/images/donga-shot.png",
     tags: ["WordPress", "PHP", "HTML5", "CSS3", "JavaScript"],
-    codeUrl: "https://github.com/you/dashboardx",
     liveUrl: "https://donga.co.ke",
     reverse: true,
   },
