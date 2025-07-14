@@ -32,27 +32,26 @@ export default function AboutPage() {
             className={cn(
               "absolute inset-0 -z-10",
               "[background-size:20px_20px]",
-              "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
-              "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
+              "[background-image:radial-gradient(var(--grey-color)_1px,transparent_1px)]"
             )}
           />
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black -z-10" />
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-[var(--background-color)] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,var(--background-color))] -z-10" />
 
           <ContainerNarrow>
             <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-12 items-center">
               {/* Column 1 with the text */}
               <div className="space-y-4">
-                <p className="text-2xl font-medium">My Coding Journey</p>
+                <h2>My Coding Journey</h2>
                 <p className="text-xl">
                   My journey into the world of programming began in 2008 during
-                  my second year at university. My first project—a Patient
-                  Management System for a hospital—was built using Microsoft
+                  my second year at university. My first project, a Patient
+                  Management System for a hospital, was built using Microsoft
                   Visual Basic for the front end and Microsoft Access for the
                   back end. That experience ignited a lasting fascination, not
                   just with the logic of coding but with the art of crafting
                   visually appealing, user-friendly applications. I quickly
                   realized that my passion lay at the intersection of
-                  functionality, aesthetics, and seamless user experience—a
+                  functionality, aesthetics, and seamless user experience, a
                   foundation that shaped my path toward full-stack development.
                 </p>
                 <p>
@@ -341,7 +340,7 @@ export default function AboutPage() {
                   href="/about"
                   className="btn-rounded mt-2 inline-flex items-center"
                 >
-                  My Résumé
+                  Request Résumé
                 </Link>
 
                 <div className="flex items-center justify-between w-full">

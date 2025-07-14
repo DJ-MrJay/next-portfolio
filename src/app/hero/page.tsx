@@ -34,12 +34,39 @@ export default function Hero({
         <div className="lg:w-[55%] w-[95%]">
           <div className="space-y-4">
             <p>Jonah Wambua</p>
-            <h1 className="tracking-tight">Full-Stack Software Developer.</h1>
-            <h2 className="tracking-tight">Graphic & UI/UX Designer.</h2>
-            <h4>
-              I develop web applications & digital designs, prioritizing user
-              experience, functionality, responsiveness, and accessibility.
-            </h4>
+            <motion.div
+              className="space-y-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.9, ease: "easeOut" },
+              }}
+            >
+              <h1 className="leading-tight lg:hidden">
+                Full-Stack Software Developer.
+              </h1>
+              <div className="hidden lg:block space-y-0">
+                <h1 className="leading-tight">Full-Stack Software</h1>
+                <h1 className="leading-tight">Developer.</h1>
+              </div>
+              <h2 className="leading-tight">Graphic & UI/UX Designer.</h2>
+            </motion.div>
+            <motion.div
+              initial={{ clipPath: "inset(0 100% 0 0)" }}
+              animate={{ clipPath: "inset(0 0% 0 0)" }}
+              transition={{
+                duration: 1,
+                ease: "easeInOut",
+                delay: 0.5, // Delay ensures it runs after h2 animation
+              }}
+            >
+              <h4 className="leading-tight">
+                I develop web applications & digital designs, prioritizing user
+                experience, functionality, responsiveness, and accessibility.
+              </h4>
+            </motion.div>
+
             <Link
               href="/"
               onClick={onWelcomeClick}
