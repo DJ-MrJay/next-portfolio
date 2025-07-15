@@ -58,21 +58,32 @@ Open http://localhost:3000 to view the project in your browser.
 
 ## 📸 Screenshots
 
-<div align="center">
-  <table>
-    <tr>
-      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot1.png" alt="Homepage" width="300"/></td>
-      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot2.png" alt="Intro Page" width="300"/></td>
-    </tr>
-    <tr>
-      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot3.png" alt="Experience & Skills Section" width="300"/></td>
-      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot4.png" alt="Articles Section" width="300"/></td>
-    </tr>
-    <tr>
-      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot5.png" alt="Contact Section" width="300"/></td>
-      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot6.png" alt="Work Section" width="300"/></td>
-    </tr>
-  </table>
+<div align="center" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+
+  <div style="flex: 1 1 45%; max-width: 45%; padding: 8px;">
+    <img src="/screenshots/Screenshot1.png" alt="Screenshot 1" style="width: 100%; height: auto;" />
+  </div>
+
+  <div style="flex: 1 1 45%; max-width: 45%; padding: 8px;">
+    <img src="/screenshots/Screenshot2.png" alt="Screenshot 2" style="width: 100%; height: auto;" />
+  </div>
+
+  <div style="flex: 1 1 45%; max-width: 45%; padding: 8px;">
+    <img src="/screenshots/Screenshot3.png" alt="Screenshot 3" style="width: 100%; height: auto;" />
+  </div>
+
+  <div style="flex: 1 1 45%; max-width: 45%; padding: 8px;">
+    <img src="/screenshots/Screenshot4.png" alt="Screenshot 4" style="width: 100%; height: auto;" />
+  </div>
+
+  <div style="flex: 1 1 45%; max-width: 45%; padding: 8px;">
+    <img src="/screenshots/Screenshot5.png" alt="Screenshot 5" style="width: 100%; height: auto;" />
+  </div>
+
+  <div style="flex: 1 1 45%; max-width: 45%; padding: 8px;">
+    <img src="/screenshots/Screenshot6.png" alt="Screenshot 6" style="width: 100%; height: auto;" />
+  </div>
+
 </div>
 
 ---
