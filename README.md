@@ -61,16 +61,16 @@ Open http://localhost:3000 to view the project in your browser.
 <div align="center">
   <table>
     <tr>
-      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot1.png" alt="Homepage" width="48%"/></td>
-      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot2.png" alt="About Page" width="48%"/></td>
+      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot1.png" alt="Homepage"/></td>
+      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot2.png" alt="About Page"/></td>
     </tr>
     <tr>
-      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot3.png" alt="Experience & Skills Section" width="48%"/></td>
-      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot4.png" alt="Articles Section" width="48%"/></td>
+      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot3.png" alt="Experience & Skills Section"/></td>
+      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot4.png" alt="Articles Section"/></td>
     </tr>
     <tr>
-      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot5.png" alt="Contact Section" width="48%"/></td>
-      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot6.png" alt="Work Section" width="48%"/></td>
+      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot5.png" alt="Contact Section"/></td>
+      <td style="padding: 10px;"><img src="/public/screenshots/Screenshot6.png" alt="Work Section"/></td>
     </tr>
   </table>
 </div>
