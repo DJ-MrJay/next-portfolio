@@ -1,13 +1,12 @@
 # My Developer Portfolio
 
-This is a modern portfolio website built with Next.js, showcasing my skills, projects, and professional experience. The portfolio features responsive design, smooth animations, and a clean, professional aesthetic. It is built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), and [shadcn/ui](https://ui.shadcn.com/). It showcases my work, articles, and contact information in a clean single-page layout.
+This is a modern portfolio website, showcasing my skills, projects, and professional experience. The portfolio features responsive design, smooth animations, and a clean, professional aesthetic. It is built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), and [shadcn/ui](https://ui.shadcn.com/). It showcases my work, articles, and contact information in a clean single-page layout.
 
 ---
 
 ## 🔗 Live Demo
 
 [Visit the live site](https://your-deployment-url.com)  
-*(Replace with your actual deployment URL)*
 
 ---
 
