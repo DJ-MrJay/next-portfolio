@@ -9,13 +9,15 @@ const Footer = () => {
   return (
     <footer className="py-10">
       <Container>
-      <div className="flex flex-wrap gap-4 justify-center md:justify-between items-center text-center">
-
+        <div
+          className="flex flex-wrap gap-4 justify-center md:justify-between items-center text-center"
+          style={{ color: "var(--shade-500)" }}
+        >
           {/* Left Text */}
           <div className="text-sm">
             <p>
-              ©2015 -  {year}. Developed with <span style={{ color: "red" }}>♥</span>{" "}
-              by yours truly!
+              ©2015 - {year}. Developed with{" "}
+              <span style={{ color: "red" }}>♥</span> by yours truly!
             </p>
           </div>
 

@@ -1,6 +1,6 @@
 export default function SocialLinks() {
   return (
-    <div className="social-media flex gap-4 text-base text-xl">
+    <div className="social-media flex gap-4 text-base text-lg">
       <a
         href="https://www.linkedin.com/in/jonah-wambua/"
         target="_blank"

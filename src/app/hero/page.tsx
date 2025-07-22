@@ -2,9 +2,9 @@
 
 import { ArrowDown } from "lucide-react";
 import { Container } from "@/components/Container";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { BackgroundBeams } from "../components/ui/background-beams";
+import Link from "next/link";
 
 export default function Hero({
   onWelcomeClick,

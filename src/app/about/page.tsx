@@ -19,12 +19,12 @@ import { cn } from "@/lib/utils";
 export default function AboutPage() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, ease: "easeInOut" }}
-        style={{ paddingTop: "var(--navbar-height)" }}
+        // style={{ paddingTop: "var(--navbar-height)" }}
       >
         <section className="relative overflow-hidden py-[10%] md:py-[5%] mx-auto">
           {/* Dot Background Layer */}
@@ -345,7 +345,7 @@ export default function AboutPage() {
 
                 <div className="flex items-center justify-between w-full">
                   <Link
-                    href="/hero"
+                    href="/#about"
                     className="flex items-center gap-2 scroll-smooth"
                   >
                     <motion.div
