@@ -1,12 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Menu, Sun, Moon, Equal, X } from "lucide-react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { Container } from "@/components/Container";
 import { motion, AnimatePresence } from "framer-motion";
-import { usePathname } from "next/navigation";
 import SocialLinks from "./SocialLinks";
 
 export default function Navbar() {
@@ -15,24 +14,63 @@ export default function Navbar() {
   const [prevScrollY, setPrevScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
   const [active, setActive] = useState<string>("#about");
-
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+  const [isMobile, setIsMobile] = useState(false);
 
   const links = [
-    { href: "#intro", label: "About" },
-    { href: "#work", label: "Work" },
-    { href: "#articles", label: "Articles" },
-    { href: "#contact", label: "Contact" },
+    { href: "/#intro", label: "About" },
+    { href: "/#work", label: "Work" },
+    { href: "/#articles", label: "Articles" },
+    { href: "/#contact", label: "Contact" },
   ];
 
+  // Update screen size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize(); // Run on mount
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Scroll direction detection
+  const handleScroll = useCallback(() => {
+    const currentScrollY = window.scrollY;
+    setIsVisible(currentScrollY < prevScrollY || currentScrollY < 10);
+    setPrevScrollY(currentScrollY);
+  }, [prevScrollY]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  // Update active link on hash change
+  useEffect(() => {
+    const updateHash = () => setActive(window.location.hash);
+    window.addEventListener("hashchange", updateHash);
+    return () => window.removeEventListener("hashchange", updateHash);
+  }, []);
+
+  const toggleTheme = useCallback(() => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  }, [theme, setTheme]);
+
   const menuVariants = {
-    initial: {},
+    initial: { opacity: 0, y: 20 },
     animate: {
+      opacity: 1,
+      y: 0,
       transition: {
+        duration: 0.4,
+        ease: [0.25, 0.1, 0.25, 1],
         staggerChildren: 0.1,
       },
+    },
+    exit: {
+      opacity: 0,
+      y: 20,
+      transition: { duration: 0.2 },
     },
   };
 
@@ -47,27 +85,6 @@ export default function Navbar() {
       },
     },
   };
-
-  // Detect scroll direction
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setIsVisible(currentScrollY < prevScrollY || currentScrollY < 10);
-      setPrevScrollY(currentScrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollY]);
-
-  // Update active link on hash change
-  useEffect(() => {
-    const updateHash = () => {
-      setActive(window.location.hash);
-    };
-    window.addEventListener("hashchange", updateHash);
-    return () => window.removeEventListener("hashchange", updateHash);
-  }, []);
 
   return (
     <motion.header
@@ -95,7 +112,7 @@ export default function Navbar() {
           </Link>
 
           <div className="flex gap-8 items-center">
-            {/* Desktop Nav */}
+            {/* Desktop Navigation */}
             <nav className="hidden md:flex gap-8">
               {links.map((link) => (
                 <a
@@ -114,30 +131,24 @@ export default function Navbar() {
               {/* Theme Toggle */}
               <button onClick={toggleTheme} aria-label="Toggle Theme">
                 {theme === "dark" ? (
-                  <Sun
-                    size={window.innerWidth < 768 ? 28 : 24}
-                    strokeWidth={1.5}
-                  />
+                  <Sun size={isMobile ? 28 : 24} strokeWidth={1.5} />
                 ) : (
-                  <Moon
-                    size={window.innerWidth < 768 ? 28 : 24}
-                    strokeWidth={1.5}
-                  />
+                  <Moon size={isMobile ? 28 : 24} strokeWidth={1.5} />
                 )}
               </button>
 
               {/* Mobile Menu Toggle */}
-              <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="md:hidden"
+                aria-label="Toggle menu"
+                aria-expanded={isOpen}
+                aria-controls="mobile-menu"
+              >
                 {isOpen ? (
-                  <X
-                    size={window.innerWidth < 768 ? 30 : 24}
-                    strokeWidth={1.5}
-                  />
+                  <X size={isMobile ? 30 : 24} strokeWidth={1.5} />
                 ) : (
-                  <Equal
-                    size={window.innerWidth < 768 ? 30 : 24}
-                    strokeWidth={1.5}
-                  />
+                  <Equal size={isMobile ? 30 : 24} strokeWidth={1.5} />
                 )}
               </button>
             </div>
@@ -149,12 +160,12 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             key="mobile-menu"
             initial="initial"
             animate="animate"
-            exit="initial"
+            exit="exit"
             variants={menuVariants}
-            transition={{ duration: 0.2 }}
             className="md:hidden pt-16 pb-16 m-5 rounded-xl flex flex-col gap-4 items-center"
             style={{
               backgroundColor: "var(--background-color-transparent)",
