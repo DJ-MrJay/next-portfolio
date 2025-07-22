@@ -12,11 +12,11 @@ This is a modern portfolio website, showcasing my skills, projects, and professi
 
 ## 🛠️ Tech Stack
 
-- **Framework:** [Next.js](https://nextjs.org/)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components:** [shadcn/ui](https://ui.shadcn.com/)
-- **Animations:** [Framer Motion](https://www.framer.com/motion/)
-- **Theme Toggle:** [next-themes](https://github.com/pacocoursey/next-themes)
+- **Framework:** <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">Next.js ↗</a>  
+- **Styling:** <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind CSS ↗</a>  
+- **UI Components:** <a href="https://ui.shadcn.com/" target="_blank" rel="noopener noreferrer">shadcn/ui ↗</a>  
+- **Animations:** <a href="https://www.framer.com/motion/" target="_blank" rel="noopener noreferrer">Framer Motion ↗</a>  
+- **Theme Toggle:** <a href="https://github.com/pacocoursey/next-themes" target="_blank" rel="noopener noreferrer">next-themes ↗</a>
 
 ---
 
