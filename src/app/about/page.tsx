@@ -362,7 +362,7 @@ export default function AboutPage() {
                   </Link>
 
                   <Link
-                    href="/"
+                    href="/#work"
                     className="flex items-center gap-2 scroll-smooth"
                   >
                     Work
